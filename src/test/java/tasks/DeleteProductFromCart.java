@@ -6,7 +6,8 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 
 import static userinterface.CartPage.REMOVE_PROD2_BTN;
-import static userinterface.HomePage.CART_BTN;
+import static userinterface.HomePage.*;
+import static userinterface.HomePage.ADDTOCART_PROD3_BTN;
 
 public class DeleteProductFromCart implements Task {
 
@@ -20,7 +21,7 @@ public class DeleteProductFromCart implements Task {
         );
     }
 
-    public static DeleteProductFromCart deleteProductFromCart(String productName) {
+    public static DeleteProductFromCart deleteProduct(String productName) {
         return Tasks.instrumented(DeleteProductFromCart.class, productName);
     }
 }

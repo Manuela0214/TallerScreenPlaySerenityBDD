@@ -7,7 +7,12 @@ import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
-import static userinterface.CheckoutPage.*;
+import static userinterface.CartPage.CHECKOUT_BTN;
+import static userinterface.CheckoutPage.FIRSTNAME_INPUT;
+import static userinterface.CheckoutPage.LASTNAME_INPUT;
+import static userinterface.CheckoutPage.POSTALCODE_INPUT;
+import static userinterface.CheckoutPage.CONTINUE_BTN;
+import static userinterface.CheckoutPage.FINISH_BTN;
 
 public class CompleteCheckout implements Task {
 
@@ -24,13 +29,15 @@ public class CompleteCheckout implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Click.on(CHECKOUT_BTN),
                 Clear.field(FIRSTNAME_INPUT),
                 Enter.keyValues(name).into(FIRSTNAME_INPUT),
                 Clear.field(LASTNAME_INPUT),
                 Enter.keyValues(lastName).into(LASTNAME_INPUT),
                 Clear.field(POSTALCODE_INPUT),
                 Enter.keyValues(postalCode).into(POSTALCODE_INPUT),
-                Click.on(CONTINUE_BTN)
+                Click.on(CONTINUE_BTN),
+                Click.on(FINISH_BTN)
         );
     }
 
