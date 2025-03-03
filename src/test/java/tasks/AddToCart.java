@@ -1,27 +1,26 @@
 package tasks;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
-
 import java.util.List;
-
 import static userinterface.HomePage.ADDTOCART_PROD1_BTN;
 import static userinterface.HomePage.ADDTOCART_PROD2_BTN;
 import static userinterface.HomePage.ADDTOCART_PROD3_BTN;
 import static userinterface.HomePage.CART_BTN;
 
+@NoArgsConstructor
+@AllArgsConstructor
 public class AddToCart implements Task {
 
     private List<String> products;
 
-    public AddToCart(List<String> products) {
-        this.products = products;
-    }
-
     @Override
+    @Step("{0} agrega los productos al carrito de compras")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(ADDTOCART_PROD1_BTN),

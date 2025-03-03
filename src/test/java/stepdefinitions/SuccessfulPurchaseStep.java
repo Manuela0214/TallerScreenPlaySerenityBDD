@@ -1,30 +1,20 @@
 package stepdefinitions;
 
 import hook.OpenBrowser;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 import questions.*;
-import tasks.AddToCart;
-import tasks.DeleteProductFromCart;
-import tasks.OrderProducts;
-
 import java.util.Arrays;
 import java.util.List;
-
 import static constants.Constants.ACTOR;
 import static constants.Constants.WEB_URL;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
-
-import static org.hamcrest.Matchers.equalTo;
-import static questions.CompleteCheckout.successfulMessage;
+import static questions.SuccessfulMessage.successfulMessage;
 import static questions.ErrorMessage.errorMessage;
-import static questions.UrlPage.urlPage;
 import static tasks.AddToCart.addToCart;
 import static tasks.CompleteCheckout.completeCheckout;
 import static tasks.DeleteProductFromCart.deleteProduct;

@@ -5,7 +5,6 @@ import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 import java.util.Arrays;
 import java.util.List;
-
 import static userinterface.CartPage.QUANTITY_PROD1;
 import static userinterface.CartPage.QUANTITY_PROD2;
 import static userinterface.CartPage.QUANTITY_PROD3;

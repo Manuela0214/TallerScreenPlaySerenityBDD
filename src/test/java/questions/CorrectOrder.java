@@ -5,14 +5,12 @@ import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 import java.util.Arrays;
 import java.util.List;
-
 import static userinterface.HomePage.PRICEPROD1_NAME;
 import static userinterface.HomePage.PRICEPROD2_NAME;
 import static userinterface.HomePage.PRICEPROD3_NAME;
 import static userinterface.HomePage.PRICEPROD4_NAME;
 import static userinterface.HomePage.PRICEPROD5_NAME;
 import static userinterface.HomePage.PRICEPROD6_NAME;
-
 
 public class CorrectOrder implements Question<Boolean> {
 

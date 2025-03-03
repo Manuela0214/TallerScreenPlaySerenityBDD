@@ -3,8 +3,6 @@ package questions;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
-import net.serenitybdd.screenplay.questions.Visibility;
-import net.serenitybdd.screenplay.targets.Target;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,9 +23,6 @@ public class ActualProducts implements Question<Boolean> {
         List<String> actualProducts = Arrays.asList(firstProduct, secondProduct);
 
         return expectedProducts.equals(actualProducts);
-//        String productDeleted = Text.of(PROD2CART_NAME).answeredBy(actor);
-//
-//        return  Visibility.of(productDeleted).answeredBy(actor).booleanValue();
     }
 
     public static ActualProducts actualProducts() {

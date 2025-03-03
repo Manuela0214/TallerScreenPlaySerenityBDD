@@ -6,14 +6,14 @@ import net.serenitybdd.screenplay.questions.Text;
 
 import static userinterface.CheckoutPage.FINAL_MSG;
 
-public class CompleteCheckout implements Question<String> {
+public class SuccessfulMessage implements Question<String> {
 
     @Override
     public String answeredBy(Actor actor) {
         return Text.of(FINAL_MSG).answeredBy(actor);
     }
 
-    public static CompleteCheckout successfulMessage() {
-        return new CompleteCheckout();
+    public static SuccessfulMessage successfulMessage() {
+        return new SuccessfulMessage();
     }
 }

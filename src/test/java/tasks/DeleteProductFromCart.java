@@ -1,5 +1,8 @@
 package tasks;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -7,13 +10,12 @@ import net.serenitybdd.screenplay.actions.Click;
 
 import static userinterface.CartPage.REMOVE_PROD2_BTN;
 import static userinterface.HomePage.*;
-import static userinterface.HomePage.ADDTOCART_PROD3_BTN;
 
+@NoArgsConstructor
 public class DeleteProductFromCart implements Task {
 
-    private String productName;
-
     @Override
+    @Step("{0} elimina un producto del carrito de compras")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(CART_BTN),
