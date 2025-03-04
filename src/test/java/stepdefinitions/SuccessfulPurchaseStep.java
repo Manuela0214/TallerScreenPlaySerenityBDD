@@ -8,8 +8,8 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import questions.*;
 import java.util.Arrays;
 import java.util.List;
-import static constants.Constants.ACTOR;
-import static constants.Constants.WEB_URL;
+
+import static constants.Constants.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
@@ -39,7 +39,7 @@ public class SuccessfulPurchaseStep {
     @Then("debe mostrarse la pagina principal de Swag Labs")
     public void debeMostrarseLaPaginaPrincipalDeSwagLabs() {
         OnStage.theActorInTheSpotlight().should(
-                seeThat(UrlPage.urlPage(), containsString("inventory.html"))
+                seeThat(UrlPage.urlPage(), containsString(URL_HOMEPAGE))
         );
     }
 
@@ -47,7 +47,7 @@ public class SuccessfulPurchaseStep {
     public void unUsuarioSeEncuentraEnLaPaginaPrincipalDeSwagLabs() {
         OnStage.theActorCalled(ACTOR).attemptsTo(
                 OpenBrowser.openUrl(WEB_URL),
-                login("standard_user", "secret_sauce")
+                login(USERNAME, PASSWORD)
         );
     }
 
@@ -90,8 +90,8 @@ public class SuccessfulPurchaseStep {
     public void unUsuarioSeEncuentraEnElCarritoDeCompras() {
         unUsuarioSeEncuentraEnLaPaginaPrincipalDeSwagLabs();
         OnStage.theActorCalled(ACTOR).attemptsTo(
-                orderProducts("Price (low to high)"),
-                addToCart(Arrays.asList("Sauce Labs Bolt T-Shirt","Sauce Labs Bike Light","Sauce Labs Onesie"))
+                orderProducts(ORDER_BY),
+                addToCart(Arrays.asList(PROD1,PROD2,PROD3))
         );
     }
 
@@ -124,7 +124,7 @@ public class SuccessfulPurchaseStep {
     @Then("debe mostrarse el mensaje de confirmacion {string}")
     public void debeMostrarseElMensajeDeConfirmacion(String message) {
         OnStage.theActorInTheSpotlight().should(
-                seeThat(successfulMessage(), containsString("THANK YOU FOR YOUR ORDER"))
+                seeThat(successfulMessage(), containsString(SUCCESSFUL_MESSAGE))
         );
     }
 
@@ -143,7 +143,7 @@ public class SuccessfulPurchaseStep {
     @Then("debe mostrarse el mensaje de error {string}")
     public void debeMostrarseElMensajeDeError(String message) {
         OnStage.theActorInTheSpotlight().should(
-                seeThat(errorMessage(), containsString("Epic sadface") )
+                seeThat(errorMessage(), containsString(ERROR_MESSAGE) )
         );
     }
 }

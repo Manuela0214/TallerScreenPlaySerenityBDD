@@ -14,10 +14,7 @@ import static userinterface.HomePage.ADDTOCART_PROD3_BTN;
 import static userinterface.HomePage.CART_BTN;
 
 @NoArgsConstructor
-@AllArgsConstructor
 public class AddToCart implements Task {
-
-    private List<String> products;
 
     @Override
     @Step("{0} agrega los productos al carrito de compras")

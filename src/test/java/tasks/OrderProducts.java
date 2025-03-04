@@ -1,6 +1,5 @@
 package tasks;
 
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.Actor;
